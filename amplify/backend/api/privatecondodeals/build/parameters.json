@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 0,
+    "AppSyncApiName": "privatecondodeals",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authprivatecondodeals892d6319",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-privatecondodeals-dev-123155-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/1dc53a4e58212219744a5d7e681528fe84df981d"
+}

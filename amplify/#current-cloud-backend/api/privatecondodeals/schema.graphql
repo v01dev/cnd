@@ -1,0 +1,289 @@
+type User @model {
+  id: ID!
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  tel: String
+  mobile: String
+  developer: Developer @connection(name: "IsDeveloper")
+  nonCircumvent: String
+  preApproved: Boolean
+  accredited: Boolean
+  priorTransactions: [Transaction] @connection(name: "UserTransactions")
+  myOffers: [Unit]
+  myReservations: [Unit]
+  savedDeals: [Deal]
+  alerts: [Alert]
+  newsletter: String
+  avatar: String
+  favorites: [String]
+  favoriteBuildings: [String]
+  favoriteDeals: [String]
+  accessRequests: [String]
+  notificationRequests: Boolean
+  notificationGranted: Boolean
+  notificationDenied: Boolean
+  notificationNew: Boolean
+  notificationDigest: Boolean
+  notifications: [Notification] @connection(name: "UserNotifications")
+  sentNotifications: [Notification] @connection(name: "UserSentNotifications")
+  is_sa: Boolean
+  configured: Boolean
+  leads: [Lead] @connection(name: "UserLeads")
+  ignoreDeals: [String]
+  companyName: String
+}
+
+type Notification @model {
+  id: ID!
+  type: Int
+  deal: Deal @connection(name: "DealNotifications")
+  user: User @connection(name: "UserNotifications")
+  sender: User @connection(name: "UserSentNotifications")
+  text: String
+}
+
+type City @model {
+  id: ID!
+  name: String!
+}
+
+type View @model {
+  id: ID!
+  name: String!
+}
+
+type Transaction @model {
+  id: ID!
+  user: User @connection(name: "UserTransactions")
+}
+
+type Alert @model {
+  id: ID!
+  text: String
+}
+
+type Developer @model {
+  id: ID!
+  name: String!
+  address: String
+  city: String
+  state: String
+  zip: String
+  webAddress: String
+  email: String
+  tel: String
+  mobile: String
+  nonCircumvent: String
+  dealsPosted: Int
+  numberOfProjects: Int
+  yearFormed: Int
+  reservationAssignmentTerms: String
+  contractFlippingTerms: String
+  deals: [Deal] @connection(name: "DeveloperDeals")
+  buildings: [Building] @connection(name: "DeveloperBuildings")
+  user: User @connection(name: "IsDeveloper")
+}
+type Architect @model {
+  id: ID!
+  name: String!
+}
+type Service @model {
+  id: ID!
+  name: String!
+}
+type Community @model {
+  id: ID!
+  name: String
+  buildings: [Building] @connection(name: "CommunityBuildings")
+}
+type Amenity @model {
+  id: ID!
+  name: String
+}
+
+type Building @model {
+  id: ID!
+  community: Community @connection(name: "CommunityBuildings")
+  neighborhood: String
+  totalSF: String
+  name: String!
+  city: String
+  addres: String
+  state: String
+  zip: String
+  priceRange: String
+  beds: Int
+  baths: Int
+  yearBuilt: Int
+  unitBreakout: String
+  totalUnits: Int
+  floors: Int
+  views: [String]
+  coordinates: String
+  amenities: [String]
+  developer: Developer @connection(name: "DeveloperBuildings")
+  architect: String
+  description: String
+  avgLPrice: Float
+  avgSFPrice: Float
+  avgRPrice: Float
+  avgDOM: Float
+  fhaApproval: Boolean
+  fnmaApproval: Boolean
+  rentalApproval: Boolean
+  deal: [Deal] @connection(name: "DealBuilding")
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  sitePlan: String
+  floorPlans: [String]
+  marketingCollateral: String
+  offeringMemorandum: String
+  nickname: String
+  condoDues: Float
+  units: [Unit] @connection(name: "BuildingUnits")
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  accessRequets: [AccessRequest] @connection(name: "BuildingAccessRequests")
+  totalSfForSale: Float
+  totalSfValue: Float
+  lastSaleDate: String
+  lastSaleAmount: Float
+  lastSaleSF: Float
+  historicalAppreciation: Float
+  buildingTotalSF: Int
+}
+type Unit @aws_api_key @aws_cognito_user_pools @model {
+  id: ID!
+  community: Community @connection
+  buildingName: Building @connection(name: "BuildingUnits")
+  address: String
+  city: String
+  state: String
+  zip: String
+  unitNumber: String
+  price: Float
+  bed: Int
+  bath: Int
+  squareFootage: Float
+  priceSF: Float
+  views: [String]
+  description: String
+  amenities: [String]
+  deal: Deal @connection(name: "DealUnits")
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  floorPlan: String
+  marketingCollateral: [String]
+  offeringMemorandum: String
+  nickname: String
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  rentalApproval: Boolean
+  accessRequets: [AccessRequest] @connection(name: "UnitAccessRequests")
+  quantity: Int
+  dealPrice: Float
+  number: Int
+  quantityInDeal: Float
+  rentalAssumptions: Float
+  managementSF: Float
+  propertyTaxSF: Float
+  insuranceSF: Float
+  repairSF: Float
+  deals: [UnitDealQuantity] @connection(name: "UnitDeals")
+  bedsCount: String
+  bathsCount: String
+}
+type Deal @model {
+  id: ID!
+  active: Boolean
+  title: String
+  building: Building @connection(name: "DealBuilding")
+  unitNumbers: [Unit] @connection(name: "DealUnits")
+  developer: Developer @connection(name: "DeveloperDeals")
+  buyerRebate: Float
+  devIncentive: String
+  dollarValues: Float
+  leads: [Lead] @connection(name: "DealLeads")
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  owner: String
+  rentalApproval: Boolean
+  accessRequets: [AccessRequest] @connection(name: "DealAccessRequests")
+  offeringMemorandum: [String]
+  otherDocs: [String]
+  publicDesc: String
+  privateDesc: String
+  rentalAssumptions: Float
+  discount: Float
+  notifications: [Notification] @connection(name: "DealNotifications")
+  featured: Boolean
+  unitQuantity: [String]
+  units: [UnitDealQuantity] @connection(name: "DealUnitsQuantity")
+  occupancy: Int
+  vacancy: Int
+  images: [String]
+  videos: [String]
+  overridePrice: Boolean
+  overrideDiscount: Boolean
+}
+type AccessRequest @model {
+  id: ID!
+  building: Building @connection(name: "BuildingAccessRequests")
+  unit: Unit @connection(name: "UnitAccessRequests")
+  deal: Deal @connection(name: "DealAccessRequests")
+  user: ID
+  user_name: String
+}
+type Lead @model {
+  id: ID!
+  deal: Deal! @connection(name: "DealLeads")
+  user: User! @connection(name: "UserLeads")
+  downPayment: Float
+  purchasePrice: Float
+  bidAmount: Float
+  holdPeriod: Int
+  investmentType: Int
+  propertyTax: Float
+  management: Float
+  repairs: Float
+  insurance: Float
+  vacancy: Float
+  customRent: String
+  manualBid: Boolean
+  offerAmount: Float
+  userId: String
+  dealId: String
+  investmentTarget: String
+  appreciation: Float
+}
+
+type UnitDealQuantity @model {
+  id: ID!
+  unit: Unit @connection(name: "UnitDeals")
+  deal: Deal @connection(name: "DealUnitsQuantity")
+  quantity: Int
+  index: Int
+}
+
+type DealOffer @model {
+  id: ID!
+  dealId: String
+  userFirstName: String
+  userLastName: String
+  userPhone: String
+  userEmail: String
+  username: String
+  offerAmount: String
+  downPayment: String
+}

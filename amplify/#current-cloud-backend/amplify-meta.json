@@ -1,0 +1,111 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-privatecondodeals-dev-123155-authRole",
+			"UnauthRoleArn": "arn:aws:iam::972347561772:role/amplify-privatecondodeals-dev-123155-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::972347561772:role/amplify-privatecondodeals-dev-123155-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-privatecondodeals-dev-123155-deployment",
+			"UnauthRoleName": "amplify-privatecondodeals-dev-123155-unauthRole",
+			"StackName": "amplify-privatecondodeals-dev-123155",
+			"StackId": "arn:aws:cloudformation:us-east-1:972347561772:stack/amplify-privatecondodeals-dev-123155/fd59fc90-e77e-11ea-93a0-125caf34a739",
+			"AmplifyAppId": "d14ra1lv83c0my"
+		}
+	},
+	"auth": {
+		"privatecondodeals892d6319": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-privatecondodeals-dev-123155-deployment/amplify-cfn-templates/auth/privatecondodeals892d6319-cloudformation-template.yml",
+				"logicalId": "authprivatecondodeals892d6319"
+			},
+			"lastPushTimeStamp": "2020-08-27T16:22:40.978Z",
+			"output": {
+				"AppClientSecret": "1letv8iakvi4pkk9qq1veoh67ko8chfigii9qkdi327l3oq8b0pr",
+				"UserPoolId": "us-east-1_Ut7bg8mAj",
+				"AppClientIDWeb": "59icephrchuu44981gncrseae1",
+				"AppClientID": "7tehog1cvi2d8fakjhgtgemt81",
+				"IdentityPoolId": "us-east-1:3fa49617-4ec2-4521-b433-a7925d5c4509",
+				"IdentityPoolName": "privatecondodeals892d6319_identitypool_892d6319__dev",
+				"UserPoolName": "privatecondodeals892d6319_userpool_892d6319"
+			},
+			"lastPushDirHash": "U0U+PQQMqyZtpKuEdzaGLKjNhS0="
+		}
+	},
+	"api": {
+		"privatecondodeals": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authprivatecondodeals892d6319"
+						}
+					},
+					"additionalAuthenticationProviders": []
+				},
+				"GraphQLAPIIdOutput": "bvk5pj3gwne5rp44zmlqex7tfy",
+				"GraphQLAPIEndpointOutput": "https://rsujjwrldbaz7cw6xvwygj2yom.appsync-api.us-east-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-privatecondodeals-dev-123155-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiprivatecondodeals"
+			},
+			"lastPushTimeStamp": "2020-08-27T16:22:49.477Z",
+			"lastPushDirHash": "NeS3VD6DeH/BEw7Cysh5c3pYdrg="
+		}
+	},
+	"function": {
+		"S3Triggerc50612c8": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"lastBuildTimeStamp": "2020-08-26T09:45:28.738Z",
+			"lastPackageTimeStamp": "2020-08-26T09:45:28.817Z",
+			"distZipFilename": "S3Triggerc50612c8-426d62466a794a563567-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-privatecondodeals-dev-123155-deployment/amplify-cfn-templates/function/S3Triggerc50612c8-cloudformation-template.json",
+				"logicalId": "functionS3Triggerc50612c8"
+			},
+			"lastPushTimeStamp": "2020-08-27T16:22:40.983Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:972347561772:function:S3Triggerc50612c8-dev",
+				"Name": "S3Triggerc50612c8-dev",
+				"LambdaExecutionRole": "S3Triggerc50612c8LambdaRolec50612c8-dev"
+			},
+			"lastPushDirHash": "OZqNlxgjRtkMmeHCTyynd5gO0Co="
+		}
+	},
+	"storage": {
+		"PrivateCondoStorage": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "S3Triggerc50612c8",
+					"attributes": [
+						"Name",
+						"Arn",
+						"LambdaExecutionRole"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-privatecondodeals-dev-123155-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storagePrivateCondoStorage"
+			},
+			"lastPushTimeStamp": "2020-08-27T16:22:40.984Z",
+			"output": {
+				"BucketName": "privatecondobucket123155-dev",
+				"Region": "us-east-1"
+			},
+			"lastPushDirHash": "9CyPKOjzm0yR7sz8s8omMDZe3T0="
+		}
+	}
+}

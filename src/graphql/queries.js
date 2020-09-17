@@ -1,0 +1,4587 @@
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
+
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
+      id
+      firstName
+      lastName
+      username
+      email
+      tel
+      mobile
+      developer {
+        id
+        name
+        address
+        city
+        state
+        zip
+        webAddress
+        email
+        tel
+        mobile
+        nonCircumvent
+        dealsPosted
+        numberOfProjects
+        yearFormed
+        reservationAssignmentTerms
+        contractFlippingTerms
+        deals {
+          nextToken
+        }
+        buildings {
+          nextToken
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nonCircumvent
+      preApproved
+      accredited
+      priorTransactions {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      myOffers {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        buildingName {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        address
+        city
+        state
+        zip
+        unitNumber
+        price
+        bed
+        bath
+        squareFootage
+        priceSF
+        views
+        description
+        amenities
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        devIncentive
+        images
+        videos
+        floorPlan
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        quantity
+        dealPrice
+        number
+        quantityInDeal
+        rentalAssumptions
+        managementSF
+        propertyTaxSF
+        insuranceSF
+        repairSF
+        deals {
+          nextToken
+        }
+        bedsCount
+        bathsCount
+        createdAt
+        updatedAt
+      }
+      myReservations {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        buildingName {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        address
+        city
+        state
+        zip
+        unitNumber
+        price
+        bed
+        bath
+        squareFootage
+        priceSF
+        views
+        description
+        amenities
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        devIncentive
+        images
+        videos
+        floorPlan
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        quantity
+        dealPrice
+        number
+        quantityInDeal
+        rentalAssumptions
+        managementSF
+        propertyTaxSF
+        insuranceSF
+        repairSF
+        deals {
+          nextToken
+        }
+        bedsCount
+        bathsCount
+        createdAt
+        updatedAt
+      }
+      savedDeals {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      alerts {
+        id
+        text
+        createdAt
+        updatedAt
+      }
+      newsletter
+      avatar
+      favorites
+      favoriteBuildings
+      favoriteDeals
+      accessRequests
+      notificationRequests
+      notificationGranted
+      notificationDenied
+      notificationNew
+      notificationDigest
+      notifications {
+        items {
+          id
+          type
+          text
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      sentNotifications {
+        items {
+          id
+          type
+          text
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      is_sa
+      configured
+      leads {
+        items {
+          id
+          downPayment
+          purchasePrice
+          bidAmount
+          holdPeriod
+          investmentType
+          propertyTax
+          management
+          repairs
+          insurance
+          vacancy
+          customRent
+          manualBid
+          offerAmount
+          userId
+          dealId
+          investmentTarget
+          appreciation
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      ignoreDeals
+      companyName
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        firstName
+        lastName
+        username
+        email
+        tel
+        mobile
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        nonCircumvent
+        preApproved
+        accredited
+        priorTransactions {
+          nextToken
+        }
+        myOffers {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        myReservations {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        savedDeals {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        alerts {
+          id
+          text
+          createdAt
+          updatedAt
+        }
+        newsletter
+        avatar
+        favorites
+        favoriteBuildings
+        favoriteDeals
+        accessRequests
+        notificationRequests
+        notificationGranted
+        notificationDenied
+        notificationNew
+        notificationDigest
+        notifications {
+          nextToken
+        }
+        sentNotifications {
+          nextToken
+        }
+        is_sa
+        configured
+        leads {
+          nextToken
+        }
+        ignoreDeals
+        companyName
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getNotification = /* GraphQL */ `
+  query GetNotification($id: ID!) {
+    getNotification(id: $id) {
+      id
+      type
+      deal {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        username
+        email
+        tel
+        mobile
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        nonCircumvent
+        preApproved
+        accredited
+        priorTransactions {
+          nextToken
+        }
+        myOffers {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        myReservations {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        savedDeals {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        alerts {
+          id
+          text
+          createdAt
+          updatedAt
+        }
+        newsletter
+        avatar
+        favorites
+        favoriteBuildings
+        favoriteDeals
+        accessRequests
+        notificationRequests
+        notificationGranted
+        notificationDenied
+        notificationNew
+        notificationDigest
+        notifications {
+          nextToken
+        }
+        sentNotifications {
+          nextToken
+        }
+        is_sa
+        configured
+        leads {
+          nextToken
+        }
+        ignoreDeals
+        companyName
+        createdAt
+        updatedAt
+      }
+      sender {
+        id
+        firstName
+        lastName
+        username
+        email
+        tel
+        mobile
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        nonCircumvent
+        preApproved
+        accredited
+        priorTransactions {
+          nextToken
+        }
+        myOffers {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        myReservations {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        savedDeals {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        alerts {
+          id
+          text
+          createdAt
+          updatedAt
+        }
+        newsletter
+        avatar
+        favorites
+        favoriteBuildings
+        favoriteDeals
+        accessRequests
+        notificationRequests
+        notificationGranted
+        notificationDenied
+        notificationNew
+        notificationDigest
+        notifications {
+          nextToken
+        }
+        sentNotifications {
+          nextToken
+        }
+        is_sa
+        configured
+        leads {
+          nextToken
+        }
+        ignoreDeals
+        companyName
+        createdAt
+        updatedAt
+      }
+      text
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNotifications = /* GraphQL */ `
+  query ListNotifications(
+    $filter: ModelNotificationFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNotifications(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        type
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        sender {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        text
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCity = /* GraphQL */ `
+  query GetCity($id: ID!) {
+    getCity(id: $id) {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCitys = /* GraphQL */ `
+  query ListCitys(
+    $filter: ModelCityFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCitys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getView = /* GraphQL */ `
+  query GetView($id: ID!) {
+    getView(id: $id) {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listViews = /* GraphQL */ `
+  query ListViews(
+    $filter: ModelViewFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listViews(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getTransaction = /* GraphQL */ `
+  query GetTransaction($id: ID!) {
+    getTransaction(id: $id) {
+      id
+      user {
+        id
+        firstName
+        lastName
+        username
+        email
+        tel
+        mobile
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        nonCircumvent
+        preApproved
+        accredited
+        priorTransactions {
+          nextToken
+        }
+        myOffers {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        myReservations {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        savedDeals {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        alerts {
+          id
+          text
+          createdAt
+          updatedAt
+        }
+        newsletter
+        avatar
+        favorites
+        favoriteBuildings
+        favoriteDeals
+        accessRequests
+        notificationRequests
+        notificationGranted
+        notificationDenied
+        notificationNew
+        notificationDigest
+        notifications {
+          nextToken
+        }
+        sentNotifications {
+          nextToken
+        }
+        is_sa
+        configured
+        leads {
+          nextToken
+        }
+        ignoreDeals
+        companyName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTransactions = /* GraphQL */ `
+  query ListTransactions(
+    $filter: ModelTransactionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTransactions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getAlert = /* GraphQL */ `
+  query GetAlert($id: ID!) {
+    getAlert(id: $id) {
+      id
+      text
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAlerts = /* GraphQL */ `
+  query ListAlerts(
+    $filter: ModelAlertFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAlerts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        text
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getDeveloper = /* GraphQL */ `
+  query GetDeveloper($id: ID!) {
+    getDeveloper(id: $id) {
+      id
+      name
+      address
+      city
+      state
+      zip
+      webAddress
+      email
+      tel
+      mobile
+      nonCircumvent
+      dealsPosted
+      numberOfProjects
+      yearFormed
+      reservationAssignmentTerms
+      contractFlippingTerms
+      deals {
+        items {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      buildings {
+        items {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      user {
+        id
+        firstName
+        lastName
+        username
+        email
+        tel
+        mobile
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        nonCircumvent
+        preApproved
+        accredited
+        priorTransactions {
+          nextToken
+        }
+        myOffers {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        myReservations {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        savedDeals {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        alerts {
+          id
+          text
+          createdAt
+          updatedAt
+        }
+        newsletter
+        avatar
+        favorites
+        favoriteBuildings
+        favoriteDeals
+        accessRequests
+        notificationRequests
+        notificationGranted
+        notificationDenied
+        notificationNew
+        notificationDigest
+        notifications {
+          nextToken
+        }
+        sentNotifications {
+          nextToken
+        }
+        is_sa
+        configured
+        leads {
+          nextToken
+        }
+        ignoreDeals
+        companyName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDevelopers = /* GraphQL */ `
+  query ListDevelopers(
+    $filter: ModelDeveloperFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDevelopers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        address
+        city
+        state
+        zip
+        webAddress
+        email
+        tel
+        mobile
+        nonCircumvent
+        dealsPosted
+        numberOfProjects
+        yearFormed
+        reservationAssignmentTerms
+        contractFlippingTerms
+        deals {
+          nextToken
+        }
+        buildings {
+          nextToken
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getArchitect = /* GraphQL */ `
+  query GetArchitect($id: ID!) {
+    getArchitect(id: $id) {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listArchitects = /* GraphQL */ `
+  query ListArchitects(
+    $filter: ModelArchitectFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listArchitects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getService = /* GraphQL */ `
+  query GetService($id: ID!) {
+    getService(id: $id) {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listServices = /* GraphQL */ `
+  query ListServices(
+    $filter: ModelServiceFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCommunity = /* GraphQL */ `
+  query GetCommunity($id: ID!) {
+    getCommunity(id: $id) {
+      id
+      name
+      buildings {
+        items {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCommunitys = /* GraphQL */ `
+  query ListCommunitys(
+    $filter: ModelCommunityFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCommunitys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        buildings {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getAmenity = /* GraphQL */ `
+  query GetAmenity($id: ID!) {
+    getAmenity(id: $id) {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAmenitys = /* GraphQL */ `
+  query ListAmenitys(
+    $filter: ModelAmenityFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAmenitys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getBuilding = /* GraphQL */ `
+  query GetBuilding($id: ID!) {
+    getBuilding(id: $id) {
+      id
+      community {
+        id
+        name
+        buildings {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      neighborhood
+      totalSF
+      name
+      city
+      addres
+      state
+      zip
+      priceRange
+      beds
+      baths
+      yearBuilt
+      unitBreakout
+      totalUnits
+      floors
+      views
+      coordinates
+      amenities
+      developer {
+        id
+        name
+        address
+        city
+        state
+        zip
+        webAddress
+        email
+        tel
+        mobile
+        nonCircumvent
+        dealsPosted
+        numberOfProjects
+        yearFormed
+        reservationAssignmentTerms
+        contractFlippingTerms
+        deals {
+          nextToken
+        }
+        buildings {
+          nextToken
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      architect
+      description
+      avgLPrice
+      avgSFPrice
+      avgRPrice
+      avgDOM
+      fhaApproval
+      fnmaApproval
+      rentalApproval
+      deal {
+        items {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      devIncentive
+      images
+      videos
+      sitePlan
+      floorPlans
+      marketingCollateral
+      offeringMemorandum
+      nickname
+      condoDues
+      units {
+        items {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      userAccess
+      createdDate
+      privacy
+      status
+      owner
+      accessRequets {
+        items {
+          id
+          user
+          user_name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      totalSfForSale
+      totalSfValue
+      lastSaleDate
+      lastSaleAmount
+      lastSaleSF
+      historicalAppreciation
+      buildingTotalSF
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listBuildings = /* GraphQL */ `
+  query ListBuildings(
+    $filter: ModelBuildingFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBuildings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        neighborhood
+        totalSF
+        name
+        city
+        addres
+        state
+        zip
+        priceRange
+        beds
+        baths
+        yearBuilt
+        unitBreakout
+        totalUnits
+        floors
+        views
+        coordinates
+        amenities
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        architect
+        description
+        avgLPrice
+        avgSFPrice
+        avgRPrice
+        avgDOM
+        fhaApproval
+        fnmaApproval
+        rentalApproval
+        deal {
+          nextToken
+        }
+        devIncentive
+        images
+        videos
+        sitePlan
+        floorPlans
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        condoDues
+        units {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        accessRequets {
+          nextToken
+        }
+        totalSfForSale
+        totalSfValue
+        lastSaleDate
+        lastSaleAmount
+        lastSaleSF
+        historicalAppreciation
+        buildingTotalSF
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getUnit = /* GraphQL */ `
+  query GetUnit($id: ID!) {
+    getUnit(id: $id) {
+      id
+      community {
+        id
+        name
+        buildings {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      buildingName {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        neighborhood
+        totalSF
+        name
+        city
+        addres
+        state
+        zip
+        priceRange
+        beds
+        baths
+        yearBuilt
+        unitBreakout
+        totalUnits
+        floors
+        views
+        coordinates
+        amenities
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        architect
+        description
+        avgLPrice
+        avgSFPrice
+        avgRPrice
+        avgDOM
+        fhaApproval
+        fnmaApproval
+        rentalApproval
+        deal {
+          nextToken
+        }
+        devIncentive
+        images
+        videos
+        sitePlan
+        floorPlans
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        condoDues
+        units {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        accessRequets {
+          nextToken
+        }
+        totalSfForSale
+        totalSfValue
+        lastSaleDate
+        lastSaleAmount
+        lastSaleSF
+        historicalAppreciation
+        buildingTotalSF
+        createdAt
+        updatedAt
+      }
+      address
+      city
+      state
+      zip
+      unitNumber
+      price
+      bed
+      bath
+      squareFootage
+      priceSF
+      views
+      description
+      amenities
+      deal {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      devIncentive
+      images
+      videos
+      floorPlan
+      marketingCollateral
+      offeringMemorandum
+      nickname
+      userAccess
+      createdDate
+      privacy
+      status
+      owner
+      rentalApproval
+      accessRequets {
+        items {
+          id
+          user
+          user_name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      quantity
+      dealPrice
+      number
+      quantityInDeal
+      rentalAssumptions
+      managementSF
+      propertyTaxSF
+      insuranceSF
+      repairSF
+      deals {
+        items {
+          id
+          quantity
+          index
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      bedsCount
+      bathsCount
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUnits = /* GraphQL */ `
+  query ListUnits(
+    $filter: ModelUnitFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUnits(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        buildingName {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        address
+        city
+        state
+        zip
+        unitNumber
+        price
+        bed
+        bath
+        squareFootage
+        priceSF
+        views
+        description
+        amenities
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        devIncentive
+        images
+        videos
+        floorPlan
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        quantity
+        dealPrice
+        number
+        quantityInDeal
+        rentalAssumptions
+        managementSF
+        propertyTaxSF
+        insuranceSF
+        repairSF
+        deals {
+          nextToken
+        }
+        bedsCount
+        bathsCount
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getDeal = /* GraphQL */ `
+  query GetDeal($id: ID!) {
+    getDeal(id: $id) {
+      id
+      active
+      title
+      building {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        neighborhood
+        totalSF
+        name
+        city
+        addres
+        state
+        zip
+        priceRange
+        beds
+        baths
+        yearBuilt
+        unitBreakout
+        totalUnits
+        floors
+        views
+        coordinates
+        amenities
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        architect
+        description
+        avgLPrice
+        avgSFPrice
+        avgRPrice
+        avgDOM
+        fhaApproval
+        fnmaApproval
+        rentalApproval
+        deal {
+          nextToken
+        }
+        devIncentive
+        images
+        videos
+        sitePlan
+        floorPlans
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        condoDues
+        units {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        accessRequets {
+          nextToken
+        }
+        totalSfForSale
+        totalSfValue
+        lastSaleDate
+        lastSaleAmount
+        lastSaleSF
+        historicalAppreciation
+        buildingTotalSF
+        createdAt
+        updatedAt
+      }
+      unitNumbers {
+        items {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      developer {
+        id
+        name
+        address
+        city
+        state
+        zip
+        webAddress
+        email
+        tel
+        mobile
+        nonCircumvent
+        dealsPosted
+        numberOfProjects
+        yearFormed
+        reservationAssignmentTerms
+        contractFlippingTerms
+        deals {
+          nextToken
+        }
+        buildings {
+          nextToken
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      buyerRebate
+      devIncentive
+      dollarValues
+      leads {
+        items {
+          id
+          downPayment
+          purchasePrice
+          bidAmount
+          holdPeriod
+          investmentType
+          propertyTax
+          management
+          repairs
+          insurance
+          vacancy
+          customRent
+          manualBid
+          offerAmount
+          userId
+          dealId
+          investmentTarget
+          appreciation
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      userAccess
+      createdDate
+      privacy
+      owner
+      rentalApproval
+      accessRequets {
+        items {
+          id
+          user
+          user_name
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      offeringMemorandum
+      otherDocs
+      publicDesc
+      privateDesc
+      rentalAssumptions
+      discount
+      notifications {
+        items {
+          id
+          type
+          text
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      featured
+      unitQuantity
+      units {
+        items {
+          id
+          quantity
+          index
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      occupancy
+      vacancy
+      images
+      videos
+      overridePrice
+      overrideDiscount
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDeals = /* GraphQL */ `
+  query ListDeals(
+    $filter: ModelDealFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDeals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getAccessRequest = /* GraphQL */ `
+  query GetAccessRequest($id: ID!) {
+    getAccessRequest(id: $id) {
+      id
+      building {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        neighborhood
+        totalSF
+        name
+        city
+        addres
+        state
+        zip
+        priceRange
+        beds
+        baths
+        yearBuilt
+        unitBreakout
+        totalUnits
+        floors
+        views
+        coordinates
+        amenities
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        architect
+        description
+        avgLPrice
+        avgSFPrice
+        avgRPrice
+        avgDOM
+        fhaApproval
+        fnmaApproval
+        rentalApproval
+        deal {
+          nextToken
+        }
+        devIncentive
+        images
+        videos
+        sitePlan
+        floorPlans
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        condoDues
+        units {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        accessRequets {
+          nextToken
+        }
+        totalSfForSale
+        totalSfValue
+        lastSaleDate
+        lastSaleAmount
+        lastSaleSF
+        historicalAppreciation
+        buildingTotalSF
+        createdAt
+        updatedAt
+      }
+      unit {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        buildingName {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        address
+        city
+        state
+        zip
+        unitNumber
+        price
+        bed
+        bath
+        squareFootage
+        priceSF
+        views
+        description
+        amenities
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        devIncentive
+        images
+        videos
+        floorPlan
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        quantity
+        dealPrice
+        number
+        quantityInDeal
+        rentalAssumptions
+        managementSF
+        propertyTaxSF
+        insuranceSF
+        repairSF
+        deals {
+          nextToken
+        }
+        bedsCount
+        bathsCount
+        createdAt
+        updatedAt
+      }
+      deal {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      user
+      user_name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAccessRequests = /* GraphQL */ `
+  query ListAccessRequests(
+    $filter: ModelAccessRequestFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAccessRequests(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unit {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        user
+        user_name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getLead = /* GraphQL */ `
+  query GetLead($id: ID!) {
+    getLead(id: $id) {
+      id
+      deal {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        username
+        email
+        tel
+        mobile
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        nonCircumvent
+        preApproved
+        accredited
+        priorTransactions {
+          nextToken
+        }
+        myOffers {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        myReservations {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        savedDeals {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        alerts {
+          id
+          text
+          createdAt
+          updatedAt
+        }
+        newsletter
+        avatar
+        favorites
+        favoriteBuildings
+        favoriteDeals
+        accessRequests
+        notificationRequests
+        notificationGranted
+        notificationDenied
+        notificationNew
+        notificationDigest
+        notifications {
+          nextToken
+        }
+        sentNotifications {
+          nextToken
+        }
+        is_sa
+        configured
+        leads {
+          nextToken
+        }
+        ignoreDeals
+        companyName
+        createdAt
+        updatedAt
+      }
+      downPayment
+      purchasePrice
+      bidAmount
+      holdPeriod
+      investmentType
+      propertyTax
+      management
+      repairs
+      insurance
+      vacancy
+      customRent
+      manualBid
+      offerAmount
+      userId
+      dealId
+      investmentTarget
+      appreciation
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLeads = /* GraphQL */ `
+  query ListLeads(
+    $filter: ModelLeadFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLeads(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+          email
+          tel
+          mobile
+          nonCircumvent
+          preApproved
+          accredited
+          newsletter
+          avatar
+          favorites
+          favoriteBuildings
+          favoriteDeals
+          accessRequests
+          notificationRequests
+          notificationGranted
+          notificationDenied
+          notificationNew
+          notificationDigest
+          is_sa
+          configured
+          ignoreDeals
+          companyName
+          createdAt
+          updatedAt
+        }
+        downPayment
+        purchasePrice
+        bidAmount
+        holdPeriod
+        investmentType
+        propertyTax
+        management
+        repairs
+        insurance
+        vacancy
+        customRent
+        manualBid
+        offerAmount
+        userId
+        dealId
+        investmentTarget
+        appreciation
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getUnitDealQuantity = /* GraphQL */ `
+  query GetUnitDealQuantity($id: ID!) {
+    getUnitDealQuantity(id: $id) {
+      id
+      unit {
+        id
+        community {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        buildingName {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        address
+        city
+        state
+        zip
+        unitNumber
+        price
+        bed
+        bath
+        squareFootage
+        priceSF
+        views
+        description
+        amenities
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        devIncentive
+        images
+        videos
+        floorPlan
+        marketingCollateral
+        offeringMemorandum
+        nickname
+        userAccess
+        createdDate
+        privacy
+        status
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        quantity
+        dealPrice
+        number
+        quantityInDeal
+        rentalAssumptions
+        managementSF
+        propertyTaxSF
+        insuranceSF
+        repairSF
+        deals {
+          nextToken
+        }
+        bedsCount
+        bathsCount
+        createdAt
+        updatedAt
+      }
+      deal {
+        id
+        active
+        title
+        building {
+          id
+          neighborhood
+          totalSF
+          name
+          city
+          addres
+          state
+          zip
+          priceRange
+          beds
+          baths
+          yearBuilt
+          unitBreakout
+          totalUnits
+          floors
+          views
+          coordinates
+          amenities
+          architect
+          description
+          avgLPrice
+          avgSFPrice
+          avgRPrice
+          avgDOM
+          fhaApproval
+          fnmaApproval
+          rentalApproval
+          devIncentive
+          images
+          videos
+          sitePlan
+          floorPlans
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          condoDues
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          totalSfForSale
+          totalSfValue
+          lastSaleDate
+          lastSaleAmount
+          lastSaleSF
+          historicalAppreciation
+          buildingTotalSF
+          createdAt
+          updatedAt
+        }
+        unitNumbers {
+          nextToken
+        }
+        developer {
+          id
+          name
+          address
+          city
+          state
+          zip
+          webAddress
+          email
+          tel
+          mobile
+          nonCircumvent
+          dealsPosted
+          numberOfProjects
+          yearFormed
+          reservationAssignmentTerms
+          contractFlippingTerms
+          createdAt
+          updatedAt
+        }
+        buyerRebate
+        devIncentive
+        dollarValues
+        leads {
+          nextToken
+        }
+        userAccess
+        createdDate
+        privacy
+        owner
+        rentalApproval
+        accessRequets {
+          nextToken
+        }
+        offeringMemorandum
+        otherDocs
+        publicDesc
+        privateDesc
+        rentalAssumptions
+        discount
+        notifications {
+          nextToken
+        }
+        featured
+        unitQuantity
+        units {
+          nextToken
+        }
+        occupancy
+        vacancy
+        images
+        videos
+        overridePrice
+        overrideDiscount
+        createdAt
+        updatedAt
+      }
+      quantity
+      index
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUnitDealQuantitys = /* GraphQL */ `
+  query ListUnitDealQuantitys(
+    $filter: ModelUnitDealQuantityFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUnitDealQuantitys(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        unit {
+          id
+          address
+          city
+          state
+          zip
+          unitNumber
+          price
+          bed
+          bath
+          squareFootage
+          priceSF
+          views
+          description
+          amenities
+          devIncentive
+          images
+          videos
+          floorPlan
+          marketingCollateral
+          offeringMemorandum
+          nickname
+          userAccess
+          createdDate
+          privacy
+          status
+          owner
+          rentalApproval
+          quantity
+          dealPrice
+          number
+          quantityInDeal
+          rentalAssumptions
+          managementSF
+          propertyTaxSF
+          insuranceSF
+          repairSF
+          bedsCount
+          bathsCount
+          createdAt
+          updatedAt
+        }
+        deal {
+          id
+          active
+          title
+          buyerRebate
+          devIncentive
+          dollarValues
+          userAccess
+          createdDate
+          privacy
+          owner
+          rentalApproval
+          offeringMemorandum
+          otherDocs
+          publicDesc
+          privateDesc
+          rentalAssumptions
+          discount
+          featured
+          unitQuantity
+          occupancy
+          vacancy
+          images
+          videos
+          overridePrice
+          overrideDiscount
+          createdAt
+          updatedAt
+        }
+        quantity
+        index
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getDealOffer = /* GraphQL */ `
+  query GetDealOffer($id: ID!) {
+    getDealOffer(id: $id) {
+      id
+      dealId
+      userFirstName
+      userLastName
+      userPhone
+      userEmail
+      username
+      offerAmount
+      downPayment
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDealOffers = /* GraphQL */ `
+  query ListDealOffers(
+    $filter: ModelDealOfferFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDealOffers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        dealId
+        userFirstName
+        userLastName
+        userPhone
+        userEmail
+        username
+        offerAmount
+        downPayment
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

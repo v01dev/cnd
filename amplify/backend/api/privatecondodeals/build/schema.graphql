@@ -1,0 +1,1897 @@
+type User {
+  id: ID!
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  tel: String
+  mobile: String
+  developer: Developer
+  nonCircumvent: String
+  preApproved: Boolean
+  accredited: Boolean
+  priorTransactions(filter: ModelTransactionFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelTransactionConnection
+  myOffers: [Unit]
+  myReservations: [Unit]
+  savedDeals: [Deal]
+  alerts: [Alert]
+  newsletter: String
+  avatar: String
+  favorites: [String]
+  favoriteBuildings: [String]
+  favoriteDeals: [String]
+  accessRequests: [String]
+  notificationRequests: Boolean
+  notificationGranted: Boolean
+  notificationDenied: Boolean
+  notificationNew: Boolean
+  notificationDigest: Boolean
+  notifications(filter: ModelNotificationFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelNotificationConnection
+  sentNotifications(filter: ModelNotificationFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelNotificationConnection
+  is_sa: Boolean
+  configured: Boolean
+  leads(filter: ModelLeadFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelLeadConnection
+  ignoreDeals: [String]
+  companyName: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Notification {
+  id: ID!
+  type: Int
+  deal: Deal
+  user: User
+  sender: User
+  text: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type City {
+  id: ID!
+  name: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type View {
+  id: ID!
+  name: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Transaction {
+  id: ID!
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Alert {
+  id: ID!
+  text: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Developer {
+  id: ID!
+  name: String!
+  address: String
+  city: String
+  state: String
+  zip: String
+  webAddress: String
+  email: String
+  tel: String
+  mobile: String
+  nonCircumvent: String
+  dealsPosted: Int
+  numberOfProjects: Int
+  yearFormed: Int
+  reservationAssignmentTerms: String
+  contractFlippingTerms: String
+  deals(filter: ModelDealFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelDealConnection
+  buildings(filter: ModelBuildingFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelBuildingConnection
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Architect {
+  id: ID!
+  name: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Service {
+  id: ID!
+  name: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Community {
+  id: ID!
+  name: String
+  buildings(filter: ModelBuildingFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelBuildingConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Amenity {
+  id: ID!
+  name: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Building {
+  id: ID!
+  community: Community
+  neighborhood: String
+  totalSF: String
+  name: String!
+  city: String
+  addres: String
+  state: String
+  zip: String
+  priceRange: String
+  beds: Int
+  baths: Int
+  yearBuilt: Int
+  unitBreakout: String
+  totalUnits: Int
+  floors: Int
+  views: [String]
+  coordinates: String
+  amenities: [String]
+  developer: Developer
+  architect: String
+  description: String
+  avgLPrice: Float
+  avgSFPrice: Float
+  avgRPrice: Float
+  avgDOM: Float
+  fhaApproval: Boolean
+  fnmaApproval: Boolean
+  rentalApproval: Boolean
+  deal(filter: ModelDealFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelDealConnection
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  sitePlan: String
+  floorPlans: [String]
+  marketingCollateral: String
+  offeringMemorandum: String
+  nickname: String
+  condoDues: Float
+  units(filter: ModelUnitFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelUnitConnection
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  accessRequets(filter: ModelAccessRequestFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAccessRequestConnection
+  totalSfForSale: Float
+  totalSfValue: Float
+  lastSaleDate: String
+  lastSaleAmount: Float
+  lastSaleSF: Float
+  historicalAppreciation: Float
+  buildingTotalSF: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Unit @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  community: Community
+  buildingName: Building
+  address: String
+  city: String
+  state: String
+  zip: String
+  unitNumber: String
+  price: Float
+  bed: Int
+  bath: Int
+  squareFootage: Float
+  priceSF: Float
+  views: [String]
+  description: String
+  amenities: [String]
+  deal: Deal
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  floorPlan: String
+  marketingCollateral: [String]
+  offeringMemorandum: String
+  nickname: String
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  rentalApproval: Boolean
+  accessRequets(filter: ModelAccessRequestFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAccessRequestConnection
+  quantity: Int
+  dealPrice: Float
+  number: Int
+  quantityInDeal: Float
+  rentalAssumptions: Float
+  managementSF: Float
+  propertyTaxSF: Float
+  insuranceSF: Float
+  repairSF: Float
+  deals(filter: ModelUnitDealQuantityFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelUnitDealQuantityConnection
+  bedsCount: String
+  bathsCount: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Deal {
+  id: ID!
+  active: Boolean
+  title: String
+  building: Building
+  unitNumbers(filter: ModelUnitFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelUnitConnection
+  developer: Developer
+  buyerRebate: Float
+  devIncentive: String
+  dollarValues: Float
+  leads(filter: ModelLeadFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelLeadConnection
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  owner: String
+  rentalApproval: Boolean
+  accessRequets(filter: ModelAccessRequestFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAccessRequestConnection
+  offeringMemorandum: [String]
+  otherDocs: [String]
+  publicDesc: String
+  privateDesc: String
+  rentalAssumptions: Float
+  discount: Float
+  notifications(filter: ModelNotificationFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelNotificationConnection
+  featured: Boolean
+  unitQuantity: [String]
+  units(filter: ModelUnitDealQuantityFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelUnitDealQuantityConnection
+  occupancy: Int
+  vacancy: Int
+  images: [String]
+  videos: [String]
+  overridePrice: Boolean
+  overrideDiscount: Boolean
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type AccessRequest {
+  id: ID!
+  building: Building
+  unit: Unit
+  deal: Deal
+  user: ID
+  user_name: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Lead {
+  id: ID!
+  deal: Deal!
+  user: User!
+  downPayment: Float
+  purchasePrice: Float
+  bidAmount: Float
+  holdPeriod: Int
+  investmentType: Int
+  propertyTax: Float
+  management: Float
+  repairs: Float
+  insurance: Float
+  vacancy: Float
+  customRent: String
+  manualBid: Boolean
+  offerAmount: Float
+  userId: String
+  dealId: String
+  investmentTarget: String
+  appreciation: Float
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UnitDealQuantity {
+  id: ID!
+  unit: Unit
+  deal: Deal
+  quantity: Int
+  index: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type DealOffer {
+  id: ID!
+  dealId: String
+  userFirstName: String
+  userLastName: String
+  userPhone: String
+  userEmail: String
+  username: String
+  offerAmount: String
+  downPayment: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelUserConnection {
+  items: [User]
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelUserFilterInput {
+  id: ModelIDInput
+  firstName: ModelStringInput
+  lastName: ModelStringInput
+  username: ModelStringInput
+  email: ModelStringInput
+  tel: ModelStringInput
+  mobile: ModelStringInput
+  nonCircumvent: ModelStringInput
+  preApproved: ModelBooleanInput
+  accredited: ModelBooleanInput
+  newsletter: ModelStringInput
+  avatar: ModelStringInput
+  favorites: ModelStringInput
+  favoriteBuildings: ModelStringInput
+  favoriteDeals: ModelStringInput
+  accessRequests: ModelStringInput
+  notificationRequests: ModelBooleanInput
+  notificationGranted: ModelBooleanInput
+  notificationDenied: ModelBooleanInput
+  notificationNew: ModelBooleanInput
+  notificationDigest: ModelBooleanInput
+  is_sa: ModelBooleanInput
+  configured: ModelBooleanInput
+  ignoreDeals: ModelStringInput
+  companyName: ModelStringInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Query {
+  getUser(id: ID!): User
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection
+  getNotification(id: ID!): Notification
+  listNotifications(filter: ModelNotificationFilterInput, limit: Int, nextToken: String): ModelNotificationConnection
+  getCity(id: ID!): City
+  listCitys(filter: ModelCityFilterInput, limit: Int, nextToken: String): ModelCityConnection
+  getView(id: ID!): View
+  listViews(filter: ModelViewFilterInput, limit: Int, nextToken: String): ModelViewConnection
+  getTransaction(id: ID!): Transaction
+  listTransactions(filter: ModelTransactionFilterInput, limit: Int, nextToken: String): ModelTransactionConnection
+  getAlert(id: ID!): Alert
+  listAlerts(filter: ModelAlertFilterInput, limit: Int, nextToken: String): ModelAlertConnection
+  getDeveloper(id: ID!): Developer
+  listDevelopers(filter: ModelDeveloperFilterInput, limit: Int, nextToken: String): ModelDeveloperConnection
+  getArchitect(id: ID!): Architect
+  listArchitects(filter: ModelArchitectFilterInput, limit: Int, nextToken: String): ModelArchitectConnection
+  getService(id: ID!): Service
+  listServices(filter: ModelServiceFilterInput, limit: Int, nextToken: String): ModelServiceConnection
+  getCommunity(id: ID!): Community
+  listCommunitys(filter: ModelCommunityFilterInput, limit: Int, nextToken: String): ModelCommunityConnection
+  getAmenity(id: ID!): Amenity
+  listAmenitys(filter: ModelAmenityFilterInput, limit: Int, nextToken: String): ModelAmenityConnection
+  getBuilding(id: ID!): Building
+  listBuildings(filter: ModelBuildingFilterInput, limit: Int, nextToken: String): ModelBuildingConnection
+  getUnit(id: ID!): Unit
+  listUnits(filter: ModelUnitFilterInput, limit: Int, nextToken: String): ModelUnitConnection
+  getDeal(id: ID!): Deal
+  listDeals(filter: ModelDealFilterInput, limit: Int, nextToken: String): ModelDealConnection
+  getAccessRequest(id: ID!): AccessRequest
+  listAccessRequests(filter: ModelAccessRequestFilterInput, limit: Int, nextToken: String): ModelAccessRequestConnection
+  getLead(id: ID!): Lead
+  listLeads(filter: ModelLeadFilterInput, limit: Int, nextToken: String): ModelLeadConnection
+  getUnitDealQuantity(id: ID!): UnitDealQuantity
+  listUnitDealQuantitys(filter: ModelUnitDealQuantityFilterInput, limit: Int, nextToken: String): ModelUnitDealQuantityConnection
+  getDealOffer(id: ID!): DealOffer
+  listDealOffers(filter: ModelDealOfferFilterInput, limit: Int, nextToken: String): ModelDealOfferConnection
+}
+
+input CreateUserInput {
+  id: ID
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  tel: String
+  mobile: String
+  nonCircumvent: String
+  preApproved: Boolean
+  accredited: Boolean
+  newsletter: String
+  avatar: String
+  favorites: [String]
+  favoriteBuildings: [String]
+  favoriteDeals: [String]
+  accessRequests: [String]
+  notificationRequests: Boolean
+  notificationGranted: Boolean
+  notificationDenied: Boolean
+  notificationNew: Boolean
+  notificationDigest: Boolean
+  is_sa: Boolean
+  configured: Boolean
+  ignoreDeals: [String]
+  companyName: String
+  userDeveloperId: ID
+}
+
+input UpdateUserInput {
+  id: ID!
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  tel: String
+  mobile: String
+  nonCircumvent: String
+  preApproved: Boolean
+  accredited: Boolean
+  newsletter: String
+  avatar: String
+  favorites: [String]
+  favoriteBuildings: [String]
+  favoriteDeals: [String]
+  accessRequests: [String]
+  notificationRequests: Boolean
+  notificationGranted: Boolean
+  notificationDenied: Boolean
+  notificationNew: Boolean
+  notificationDigest: Boolean
+  is_sa: Boolean
+  configured: Boolean
+  ignoreDeals: [String]
+  companyName: String
+  userDeveloperId: ID
+}
+
+input DeleteUserInput {
+  id: ID
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!, condition: ModelUserConditionInput): User
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionInput): User
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionInput): User
+  createNotification(input: CreateNotificationInput!, condition: ModelNotificationConditionInput): Notification
+  updateNotification(input: UpdateNotificationInput!, condition: ModelNotificationConditionInput): Notification
+  deleteNotification(input: DeleteNotificationInput!, condition: ModelNotificationConditionInput): Notification
+  createCity(input: CreateCityInput!, condition: ModelCityConditionInput): City
+  updateCity(input: UpdateCityInput!, condition: ModelCityConditionInput): City
+  deleteCity(input: DeleteCityInput!, condition: ModelCityConditionInput): City
+  createView(input: CreateViewInput!, condition: ModelViewConditionInput): View
+  updateView(input: UpdateViewInput!, condition: ModelViewConditionInput): View
+  deleteView(input: DeleteViewInput!, condition: ModelViewConditionInput): View
+  createTransaction(input: CreateTransactionInput!, condition: ModelTransactionConditionInput): Transaction
+  updateTransaction(input: UpdateTransactionInput!, condition: ModelTransactionConditionInput): Transaction
+  deleteTransaction(input: DeleteTransactionInput!, condition: ModelTransactionConditionInput): Transaction
+  createAlert(input: CreateAlertInput!, condition: ModelAlertConditionInput): Alert
+  updateAlert(input: UpdateAlertInput!, condition: ModelAlertConditionInput): Alert
+  deleteAlert(input: DeleteAlertInput!, condition: ModelAlertConditionInput): Alert
+  createDeveloper(input: CreateDeveloperInput!, condition: ModelDeveloperConditionInput): Developer
+  updateDeveloper(input: UpdateDeveloperInput!, condition: ModelDeveloperConditionInput): Developer
+  deleteDeveloper(input: DeleteDeveloperInput!, condition: ModelDeveloperConditionInput): Developer
+  createArchitect(input: CreateArchitectInput!, condition: ModelArchitectConditionInput): Architect
+  updateArchitect(input: UpdateArchitectInput!, condition: ModelArchitectConditionInput): Architect
+  deleteArchitect(input: DeleteArchitectInput!, condition: ModelArchitectConditionInput): Architect
+  createService(input: CreateServiceInput!, condition: ModelServiceConditionInput): Service
+  updateService(input: UpdateServiceInput!, condition: ModelServiceConditionInput): Service
+  deleteService(input: DeleteServiceInput!, condition: ModelServiceConditionInput): Service
+  createCommunity(input: CreateCommunityInput!, condition: ModelCommunityConditionInput): Community
+  updateCommunity(input: UpdateCommunityInput!, condition: ModelCommunityConditionInput): Community
+  deleteCommunity(input: DeleteCommunityInput!, condition: ModelCommunityConditionInput): Community
+  createAmenity(input: CreateAmenityInput!, condition: ModelAmenityConditionInput): Amenity
+  updateAmenity(input: UpdateAmenityInput!, condition: ModelAmenityConditionInput): Amenity
+  deleteAmenity(input: DeleteAmenityInput!, condition: ModelAmenityConditionInput): Amenity
+  createBuilding(input: CreateBuildingInput!, condition: ModelBuildingConditionInput): Building
+  updateBuilding(input: UpdateBuildingInput!, condition: ModelBuildingConditionInput): Building
+  deleteBuilding(input: DeleteBuildingInput!, condition: ModelBuildingConditionInput): Building
+  createUnit(input: CreateUnitInput!, condition: ModelUnitConditionInput): Unit
+  updateUnit(input: UpdateUnitInput!, condition: ModelUnitConditionInput): Unit
+  deleteUnit(input: DeleteUnitInput!, condition: ModelUnitConditionInput): Unit
+  createDeal(input: CreateDealInput!, condition: ModelDealConditionInput): Deal
+  updateDeal(input: UpdateDealInput!, condition: ModelDealConditionInput): Deal
+  deleteDeal(input: DeleteDealInput!, condition: ModelDealConditionInput): Deal
+  createAccessRequest(input: CreateAccessRequestInput!, condition: ModelAccessRequestConditionInput): AccessRequest
+  updateAccessRequest(input: UpdateAccessRequestInput!, condition: ModelAccessRequestConditionInput): AccessRequest
+  deleteAccessRequest(input: DeleteAccessRequestInput!, condition: ModelAccessRequestConditionInput): AccessRequest
+  createLead(input: CreateLeadInput!, condition: ModelLeadConditionInput): Lead
+  updateLead(input: UpdateLeadInput!, condition: ModelLeadConditionInput): Lead
+  deleteLead(input: DeleteLeadInput!, condition: ModelLeadConditionInput): Lead
+  createUnitDealQuantity(input: CreateUnitDealQuantityInput!, condition: ModelUnitDealQuantityConditionInput): UnitDealQuantity
+  updateUnitDealQuantity(input: UpdateUnitDealQuantityInput!, condition: ModelUnitDealQuantityConditionInput): UnitDealQuantity
+  deleteUnitDealQuantity(input: DeleteUnitDealQuantityInput!, condition: ModelUnitDealQuantityConditionInput): UnitDealQuantity
+  createDealOffer(input: CreateDealOfferInput!, condition: ModelDealOfferConditionInput): DealOffer
+  updateDealOffer(input: UpdateDealOfferInput!, condition: ModelDealOfferConditionInput): DealOffer
+  deleteDealOffer(input: DeleteDealOfferInput!, condition: ModelDealOfferConditionInput): DealOffer
+}
+
+input ModelUserConditionInput {
+  firstName: ModelStringInput
+  lastName: ModelStringInput
+  username: ModelStringInput
+  email: ModelStringInput
+  tel: ModelStringInput
+  mobile: ModelStringInput
+  nonCircumvent: ModelStringInput
+  preApproved: ModelBooleanInput
+  accredited: ModelBooleanInput
+  newsletter: ModelStringInput
+  avatar: ModelStringInput
+  favorites: ModelStringInput
+  favoriteBuildings: ModelStringInput
+  favoriteDeals: ModelStringInput
+  accessRequests: ModelStringInput
+  notificationRequests: ModelBooleanInput
+  notificationGranted: ModelBooleanInput
+  notificationDenied: ModelBooleanInput
+  notificationNew: ModelBooleanInput
+  notificationDigest: ModelBooleanInput
+  is_sa: ModelBooleanInput
+  configured: ModelBooleanInput
+  ignoreDeals: ModelStringInput
+  companyName: ModelStringInput
+  and: [ModelUserConditionInput]
+  or: [ModelUserConditionInput]
+  not: ModelUserConditionInput
+}
+
+type Subscription {
+  onCreateUser: User @aws_subscribe(mutations: ["createUser"])
+  onUpdateUser: User @aws_subscribe(mutations: ["updateUser"])
+  onDeleteUser: User @aws_subscribe(mutations: ["deleteUser"])
+  onCreateNotification: Notification @aws_subscribe(mutations: ["createNotification"])
+  onUpdateNotification: Notification @aws_subscribe(mutations: ["updateNotification"])
+  onDeleteNotification: Notification @aws_subscribe(mutations: ["deleteNotification"])
+  onCreateCity: City @aws_subscribe(mutations: ["createCity"])
+  onUpdateCity: City @aws_subscribe(mutations: ["updateCity"])
+  onDeleteCity: City @aws_subscribe(mutations: ["deleteCity"])
+  onCreateView: View @aws_subscribe(mutations: ["createView"])
+  onUpdateView: View @aws_subscribe(mutations: ["updateView"])
+  onDeleteView: View @aws_subscribe(mutations: ["deleteView"])
+  onCreateTransaction: Transaction @aws_subscribe(mutations: ["createTransaction"])
+  onUpdateTransaction: Transaction @aws_subscribe(mutations: ["updateTransaction"])
+  onDeleteTransaction: Transaction @aws_subscribe(mutations: ["deleteTransaction"])
+  onCreateAlert: Alert @aws_subscribe(mutations: ["createAlert"])
+  onUpdateAlert: Alert @aws_subscribe(mutations: ["updateAlert"])
+  onDeleteAlert: Alert @aws_subscribe(mutations: ["deleteAlert"])
+  onCreateDeveloper: Developer @aws_subscribe(mutations: ["createDeveloper"])
+  onUpdateDeveloper: Developer @aws_subscribe(mutations: ["updateDeveloper"])
+  onDeleteDeveloper: Developer @aws_subscribe(mutations: ["deleteDeveloper"])
+  onCreateArchitect: Architect @aws_subscribe(mutations: ["createArchitect"])
+  onUpdateArchitect: Architect @aws_subscribe(mutations: ["updateArchitect"])
+  onDeleteArchitect: Architect @aws_subscribe(mutations: ["deleteArchitect"])
+  onCreateService: Service @aws_subscribe(mutations: ["createService"])
+  onUpdateService: Service @aws_subscribe(mutations: ["updateService"])
+  onDeleteService: Service @aws_subscribe(mutations: ["deleteService"])
+  onCreateCommunity: Community @aws_subscribe(mutations: ["createCommunity"])
+  onUpdateCommunity: Community @aws_subscribe(mutations: ["updateCommunity"])
+  onDeleteCommunity: Community @aws_subscribe(mutations: ["deleteCommunity"])
+  onCreateAmenity: Amenity @aws_subscribe(mutations: ["createAmenity"])
+  onUpdateAmenity: Amenity @aws_subscribe(mutations: ["updateAmenity"])
+  onDeleteAmenity: Amenity @aws_subscribe(mutations: ["deleteAmenity"])
+  onCreateBuilding: Building @aws_subscribe(mutations: ["createBuilding"])
+  onUpdateBuilding: Building @aws_subscribe(mutations: ["updateBuilding"])
+  onDeleteBuilding: Building @aws_subscribe(mutations: ["deleteBuilding"])
+  onCreateUnit: Unit @aws_subscribe(mutations: ["createUnit"])
+  onUpdateUnit: Unit @aws_subscribe(mutations: ["updateUnit"])
+  onDeleteUnit: Unit @aws_subscribe(mutations: ["deleteUnit"])
+  onCreateDeal: Deal @aws_subscribe(mutations: ["createDeal"])
+  onUpdateDeal: Deal @aws_subscribe(mutations: ["updateDeal"])
+  onDeleteDeal: Deal @aws_subscribe(mutations: ["deleteDeal"])
+  onCreateAccessRequest: AccessRequest @aws_subscribe(mutations: ["createAccessRequest"])
+  onUpdateAccessRequest: AccessRequest @aws_subscribe(mutations: ["updateAccessRequest"])
+  onDeleteAccessRequest: AccessRequest @aws_subscribe(mutations: ["deleteAccessRequest"])
+  onCreateLead: Lead @aws_subscribe(mutations: ["createLead"])
+  onUpdateLead: Lead @aws_subscribe(mutations: ["updateLead"])
+  onDeleteLead: Lead @aws_subscribe(mutations: ["deleteLead"])
+  onCreateUnitDealQuantity: UnitDealQuantity @aws_subscribe(mutations: ["createUnitDealQuantity"])
+  onUpdateUnitDealQuantity: UnitDealQuantity @aws_subscribe(mutations: ["updateUnitDealQuantity"])
+  onDeleteUnitDealQuantity: UnitDealQuantity @aws_subscribe(mutations: ["deleteUnitDealQuantity"])
+  onCreateDealOffer: DealOffer @aws_subscribe(mutations: ["createDealOffer"])
+  onUpdateDealOffer: DealOffer @aws_subscribe(mutations: ["updateDealOffer"])
+  onDeleteDealOffer: DealOffer @aws_subscribe(mutations: ["deleteDealOffer"])
+}
+
+type ModelNotificationConnection {
+  items: [Notification]
+  nextToken: String
+}
+
+input ModelNotificationFilterInput {
+  id: ModelIDInput
+  type: ModelIntInput
+  text: ModelStringInput
+  and: [ModelNotificationFilterInput]
+  or: [ModelNotificationFilterInput]
+  not: ModelNotificationFilterInput
+}
+
+input CreateNotificationInput {
+  id: ID
+  type: Int
+  text: String
+  notificationDealId: ID
+  notificationUserId: ID
+  notificationSenderId: ID
+}
+
+input UpdateNotificationInput {
+  id: ID!
+  type: Int
+  text: String
+  notificationDealId: ID
+  notificationUserId: ID
+  notificationSenderId: ID
+}
+
+input DeleteNotificationInput {
+  id: ID
+}
+
+input ModelNotificationConditionInput {
+  type: ModelIntInput
+  text: ModelStringInput
+  and: [ModelNotificationConditionInput]
+  or: [ModelNotificationConditionInput]
+  not: ModelNotificationConditionInput
+}
+
+type ModelCityConnection {
+  items: [City]
+  nextToken: String
+}
+
+input ModelCityFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelCityFilterInput]
+  or: [ModelCityFilterInput]
+  not: ModelCityFilterInput
+}
+
+input CreateCityInput {
+  id: ID
+  name: String!
+}
+
+input UpdateCityInput {
+  id: ID!
+  name: String
+}
+
+input DeleteCityInput {
+  id: ID
+}
+
+input ModelCityConditionInput {
+  name: ModelStringInput
+  and: [ModelCityConditionInput]
+  or: [ModelCityConditionInput]
+  not: ModelCityConditionInput
+}
+
+type ModelViewConnection {
+  items: [View]
+  nextToken: String
+}
+
+input ModelViewFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelViewFilterInput]
+  or: [ModelViewFilterInput]
+  not: ModelViewFilterInput
+}
+
+input CreateViewInput {
+  id: ID
+  name: String!
+}
+
+input UpdateViewInput {
+  id: ID!
+  name: String
+}
+
+input DeleteViewInput {
+  id: ID
+}
+
+input ModelViewConditionInput {
+  name: ModelStringInput
+  and: [ModelViewConditionInput]
+  or: [ModelViewConditionInput]
+  not: ModelViewConditionInput
+}
+
+type ModelTransactionConnection {
+  items: [Transaction]
+  nextToken: String
+}
+
+input ModelTransactionFilterInput {
+  id: ModelIDInput
+  and: [ModelTransactionFilterInput]
+  or: [ModelTransactionFilterInput]
+  not: ModelTransactionFilterInput
+}
+
+input CreateTransactionInput {
+  id: ID
+  transactionUserId: ID
+}
+
+input UpdateTransactionInput {
+  id: ID!
+  transactionUserId: ID
+}
+
+input DeleteTransactionInput {
+  id: ID
+}
+
+input ModelTransactionConditionInput {
+  and: [ModelTransactionConditionInput]
+  or: [ModelTransactionConditionInput]
+  not: ModelTransactionConditionInput
+}
+
+type ModelAlertConnection {
+  items: [Alert]
+  nextToken: String
+}
+
+input ModelAlertFilterInput {
+  id: ModelIDInput
+  text: ModelStringInput
+  and: [ModelAlertFilterInput]
+  or: [ModelAlertFilterInput]
+  not: ModelAlertFilterInput
+}
+
+input CreateAlertInput {
+  id: ID
+  text: String
+}
+
+input UpdateAlertInput {
+  id: ID!
+  text: String
+}
+
+input DeleteAlertInput {
+  id: ID
+}
+
+input ModelAlertConditionInput {
+  text: ModelStringInput
+  and: [ModelAlertConditionInput]
+  or: [ModelAlertConditionInput]
+  not: ModelAlertConditionInput
+}
+
+type ModelDeveloperConnection {
+  items: [Developer]
+  nextToken: String
+}
+
+input ModelDeveloperFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  address: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zip: ModelStringInput
+  webAddress: ModelStringInput
+  email: ModelStringInput
+  tel: ModelStringInput
+  mobile: ModelStringInput
+  nonCircumvent: ModelStringInput
+  dealsPosted: ModelIntInput
+  numberOfProjects: ModelIntInput
+  yearFormed: ModelIntInput
+  reservationAssignmentTerms: ModelStringInput
+  contractFlippingTerms: ModelStringInput
+  and: [ModelDeveloperFilterInput]
+  or: [ModelDeveloperFilterInput]
+  not: ModelDeveloperFilterInput
+}
+
+input CreateDeveloperInput {
+  id: ID
+  name: String!
+  address: String
+  city: String
+  state: String
+  zip: String
+  webAddress: String
+  email: String
+  tel: String
+  mobile: String
+  nonCircumvent: String
+  dealsPosted: Int
+  numberOfProjects: Int
+  yearFormed: Int
+  reservationAssignmentTerms: String
+  contractFlippingTerms: String
+  developerUserId: ID
+}
+
+input UpdateDeveloperInput {
+  id: ID!
+  name: String
+  address: String
+  city: String
+  state: String
+  zip: String
+  webAddress: String
+  email: String
+  tel: String
+  mobile: String
+  nonCircumvent: String
+  dealsPosted: Int
+  numberOfProjects: Int
+  yearFormed: Int
+  reservationAssignmentTerms: String
+  contractFlippingTerms: String
+  developerUserId: ID
+}
+
+input DeleteDeveloperInput {
+  id: ID
+}
+
+input ModelDeveloperConditionInput {
+  name: ModelStringInput
+  address: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zip: ModelStringInput
+  webAddress: ModelStringInput
+  email: ModelStringInput
+  tel: ModelStringInput
+  mobile: ModelStringInput
+  nonCircumvent: ModelStringInput
+  dealsPosted: ModelIntInput
+  numberOfProjects: ModelIntInput
+  yearFormed: ModelIntInput
+  reservationAssignmentTerms: ModelStringInput
+  contractFlippingTerms: ModelStringInput
+  and: [ModelDeveloperConditionInput]
+  or: [ModelDeveloperConditionInput]
+  not: ModelDeveloperConditionInput
+}
+
+type ModelArchitectConnection {
+  items: [Architect]
+  nextToken: String
+}
+
+input ModelArchitectFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelArchitectFilterInput]
+  or: [ModelArchitectFilterInput]
+  not: ModelArchitectFilterInput
+}
+
+input CreateArchitectInput {
+  id: ID
+  name: String!
+}
+
+input UpdateArchitectInput {
+  id: ID!
+  name: String
+}
+
+input DeleteArchitectInput {
+  id: ID
+}
+
+input ModelArchitectConditionInput {
+  name: ModelStringInput
+  and: [ModelArchitectConditionInput]
+  or: [ModelArchitectConditionInput]
+  not: ModelArchitectConditionInput
+}
+
+type ModelServiceConnection {
+  items: [Service]
+  nextToken: String
+}
+
+input ModelServiceFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelServiceFilterInput]
+  or: [ModelServiceFilterInput]
+  not: ModelServiceFilterInput
+}
+
+input CreateServiceInput {
+  id: ID
+  name: String!
+}
+
+input UpdateServiceInput {
+  id: ID!
+  name: String
+}
+
+input DeleteServiceInput {
+  id: ID
+}
+
+input ModelServiceConditionInput {
+  name: ModelStringInput
+  and: [ModelServiceConditionInput]
+  or: [ModelServiceConditionInput]
+  not: ModelServiceConditionInput
+}
+
+type ModelCommunityConnection {
+  items: [Community]
+  nextToken: String
+}
+
+input ModelCommunityFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelCommunityFilterInput]
+  or: [ModelCommunityFilterInput]
+  not: ModelCommunityFilterInput
+}
+
+input CreateCommunityInput {
+  id: ID
+  name: String
+}
+
+input UpdateCommunityInput {
+  id: ID!
+  name: String
+}
+
+input DeleteCommunityInput {
+  id: ID
+}
+
+input ModelCommunityConditionInput {
+  name: ModelStringInput
+  and: [ModelCommunityConditionInput]
+  or: [ModelCommunityConditionInput]
+  not: ModelCommunityConditionInput
+}
+
+type ModelAmenityConnection {
+  items: [Amenity]
+  nextToken: String
+}
+
+input ModelAmenityFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelAmenityFilterInput]
+  or: [ModelAmenityFilterInput]
+  not: ModelAmenityFilterInput
+}
+
+input CreateAmenityInput {
+  id: ID
+  name: String
+}
+
+input UpdateAmenityInput {
+  id: ID!
+  name: String
+}
+
+input DeleteAmenityInput {
+  id: ID
+}
+
+input ModelAmenityConditionInput {
+  name: ModelStringInput
+  and: [ModelAmenityConditionInput]
+  or: [ModelAmenityConditionInput]
+  not: ModelAmenityConditionInput
+}
+
+type ModelBuildingConnection {
+  items: [Building]
+  nextToken: String
+}
+
+input ModelBuildingFilterInput {
+  id: ModelIDInput
+  neighborhood: ModelStringInput
+  totalSF: ModelStringInput
+  name: ModelStringInput
+  city: ModelStringInput
+  addres: ModelStringInput
+  state: ModelStringInput
+  zip: ModelStringInput
+  priceRange: ModelStringInput
+  beds: ModelIntInput
+  baths: ModelIntInput
+  yearBuilt: ModelIntInput
+  unitBreakout: ModelStringInput
+  totalUnits: ModelIntInput
+  floors: ModelIntInput
+  views: ModelStringInput
+  coordinates: ModelStringInput
+  amenities: ModelStringInput
+  architect: ModelStringInput
+  description: ModelStringInput
+  avgLPrice: ModelFloatInput
+  avgSFPrice: ModelFloatInput
+  avgRPrice: ModelFloatInput
+  avgDOM: ModelFloatInput
+  fhaApproval: ModelBooleanInput
+  fnmaApproval: ModelBooleanInput
+  rentalApproval: ModelBooleanInput
+  devIncentive: ModelStringInput
+  images: ModelStringInput
+  videos: ModelStringInput
+  sitePlan: ModelStringInput
+  floorPlans: ModelStringInput
+  marketingCollateral: ModelStringInput
+  offeringMemorandum: ModelStringInput
+  nickname: ModelStringInput
+  condoDues: ModelFloatInput
+  userAccess: ModelStringInput
+  createdDate: ModelStringInput
+  privacy: ModelStringInput
+  status: ModelStringInput
+  owner: ModelStringInput
+  totalSfForSale: ModelFloatInput
+  totalSfValue: ModelFloatInput
+  lastSaleDate: ModelStringInput
+  lastSaleAmount: ModelFloatInput
+  lastSaleSF: ModelFloatInput
+  historicalAppreciation: ModelFloatInput
+  buildingTotalSF: ModelIntInput
+  and: [ModelBuildingFilterInput]
+  or: [ModelBuildingFilterInput]
+  not: ModelBuildingFilterInput
+}
+
+input CreateBuildingInput {
+  id: ID
+  neighborhood: String
+  totalSF: String
+  name: String!
+  city: String
+  addres: String
+  state: String
+  zip: String
+  priceRange: String
+  beds: Int
+  baths: Int
+  yearBuilt: Int
+  unitBreakout: String
+  totalUnits: Int
+  floors: Int
+  views: [String]
+  coordinates: String
+  amenities: [String]
+  architect: String
+  description: String
+  avgLPrice: Float
+  avgSFPrice: Float
+  avgRPrice: Float
+  avgDOM: Float
+  fhaApproval: Boolean
+  fnmaApproval: Boolean
+  rentalApproval: Boolean
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  sitePlan: String
+  floorPlans: [String]
+  marketingCollateral: String
+  offeringMemorandum: String
+  nickname: String
+  condoDues: Float
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  totalSfForSale: Float
+  totalSfValue: Float
+  lastSaleDate: String
+  lastSaleAmount: Float
+  lastSaleSF: Float
+  historicalAppreciation: Float
+  buildingTotalSF: Int
+  buildingCommunityId: ID
+  buildingDeveloperId: ID
+}
+
+input UpdateBuildingInput {
+  id: ID!
+  neighborhood: String
+  totalSF: String
+  name: String
+  city: String
+  addres: String
+  state: String
+  zip: String
+  priceRange: String
+  beds: Int
+  baths: Int
+  yearBuilt: Int
+  unitBreakout: String
+  totalUnits: Int
+  floors: Int
+  views: [String]
+  coordinates: String
+  amenities: [String]
+  architect: String
+  description: String
+  avgLPrice: Float
+  avgSFPrice: Float
+  avgRPrice: Float
+  avgDOM: Float
+  fhaApproval: Boolean
+  fnmaApproval: Boolean
+  rentalApproval: Boolean
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  sitePlan: String
+  floorPlans: [String]
+  marketingCollateral: String
+  offeringMemorandum: String
+  nickname: String
+  condoDues: Float
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  totalSfForSale: Float
+  totalSfValue: Float
+  lastSaleDate: String
+  lastSaleAmount: Float
+  lastSaleSF: Float
+  historicalAppreciation: Float
+  buildingTotalSF: Int
+  buildingCommunityId: ID
+  buildingDeveloperId: ID
+}
+
+input DeleteBuildingInput {
+  id: ID
+}
+
+input ModelBuildingConditionInput {
+  neighborhood: ModelStringInput
+  totalSF: ModelStringInput
+  name: ModelStringInput
+  city: ModelStringInput
+  addres: ModelStringInput
+  state: ModelStringInput
+  zip: ModelStringInput
+  priceRange: ModelStringInput
+  beds: ModelIntInput
+  baths: ModelIntInput
+  yearBuilt: ModelIntInput
+  unitBreakout: ModelStringInput
+  totalUnits: ModelIntInput
+  floors: ModelIntInput
+  views: ModelStringInput
+  coordinates: ModelStringInput
+  amenities: ModelStringInput
+  architect: ModelStringInput
+  description: ModelStringInput
+  avgLPrice: ModelFloatInput
+  avgSFPrice: ModelFloatInput
+  avgRPrice: ModelFloatInput
+  avgDOM: ModelFloatInput
+  fhaApproval: ModelBooleanInput
+  fnmaApproval: ModelBooleanInput
+  rentalApproval: ModelBooleanInput
+  devIncentive: ModelStringInput
+  images: ModelStringInput
+  videos: ModelStringInput
+  sitePlan: ModelStringInput
+  floorPlans: ModelStringInput
+  marketingCollateral: ModelStringInput
+  offeringMemorandum: ModelStringInput
+  nickname: ModelStringInput
+  condoDues: ModelFloatInput
+  userAccess: ModelStringInput
+  createdDate: ModelStringInput
+  privacy: ModelStringInput
+  status: ModelStringInput
+  owner: ModelStringInput
+  totalSfForSale: ModelFloatInput
+  totalSfValue: ModelFloatInput
+  lastSaleDate: ModelStringInput
+  lastSaleAmount: ModelFloatInput
+  lastSaleSF: ModelFloatInput
+  historicalAppreciation: ModelFloatInput
+  buildingTotalSF: ModelIntInput
+  and: [ModelBuildingConditionInput]
+  or: [ModelBuildingConditionInput]
+  not: ModelBuildingConditionInput
+}
+
+type ModelUnitConnection {
+  items: [Unit]
+  nextToken: String
+}
+
+input ModelUnitFilterInput {
+  id: ModelIDInput
+  address: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zip: ModelStringInput
+  unitNumber: ModelStringInput
+  price: ModelFloatInput
+  bed: ModelIntInput
+  bath: ModelIntInput
+  squareFootage: ModelFloatInput
+  priceSF: ModelFloatInput
+  views: ModelStringInput
+  description: ModelStringInput
+  amenities: ModelStringInput
+  devIncentive: ModelStringInput
+  images: ModelStringInput
+  videos: ModelStringInput
+  floorPlan: ModelStringInput
+  marketingCollateral: ModelStringInput
+  offeringMemorandum: ModelStringInput
+  nickname: ModelStringInput
+  userAccess: ModelStringInput
+  createdDate: ModelStringInput
+  privacy: ModelStringInput
+  status: ModelStringInput
+  owner: ModelStringInput
+  rentalApproval: ModelBooleanInput
+  quantity: ModelIntInput
+  dealPrice: ModelFloatInput
+  number: ModelIntInput
+  quantityInDeal: ModelFloatInput
+  rentalAssumptions: ModelFloatInput
+  managementSF: ModelFloatInput
+  propertyTaxSF: ModelFloatInput
+  insuranceSF: ModelFloatInput
+  repairSF: ModelFloatInput
+  bedsCount: ModelStringInput
+  bathsCount: ModelStringInput
+  and: [ModelUnitFilterInput]
+  or: [ModelUnitFilterInput]
+  not: ModelUnitFilterInput
+}
+
+input CreateUnitInput {
+  id: ID
+  address: String
+  city: String
+  state: String
+  zip: String
+  unitNumber: String
+  price: Float
+  bed: Int
+  bath: Int
+  squareFootage: Float
+  priceSF: Float
+  views: [String]
+  description: String
+  amenities: [String]
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  floorPlan: String
+  marketingCollateral: [String]
+  offeringMemorandum: String
+  nickname: String
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  rentalApproval: Boolean
+  quantity: Int
+  dealPrice: Float
+  number: Int
+  quantityInDeal: Float
+  rentalAssumptions: Float
+  managementSF: Float
+  propertyTaxSF: Float
+  insuranceSF: Float
+  repairSF: Float
+  bedsCount: String
+  bathsCount: String
+  unitCommunityId: ID
+  unitBuildingNameId: ID
+  unitDealId: ID
+}
+
+input UpdateUnitInput {
+  id: ID!
+  address: String
+  city: String
+  state: String
+  zip: String
+  unitNumber: String
+  price: Float
+  bed: Int
+  bath: Int
+  squareFootage: Float
+  priceSF: Float
+  views: [String]
+  description: String
+  amenities: [String]
+  devIncentive: String
+  images: [String]
+  videos: [String]
+  floorPlan: String
+  marketingCollateral: [String]
+  offeringMemorandum: String
+  nickname: String
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  status: String
+  owner: String
+  rentalApproval: Boolean
+  quantity: Int
+  dealPrice: Float
+  number: Int
+  quantityInDeal: Float
+  rentalAssumptions: Float
+  managementSF: Float
+  propertyTaxSF: Float
+  insuranceSF: Float
+  repairSF: Float
+  bedsCount: String
+  bathsCount: String
+  unitCommunityId: ID
+  unitBuildingNameId: ID
+  unitDealId: ID
+}
+
+input DeleteUnitInput {
+  id: ID
+}
+
+input ModelUnitConditionInput {
+  address: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zip: ModelStringInput
+  unitNumber: ModelStringInput
+  price: ModelFloatInput
+  bed: ModelIntInput
+  bath: ModelIntInput
+  squareFootage: ModelFloatInput
+  priceSF: ModelFloatInput
+  views: ModelStringInput
+  description: ModelStringInput
+  amenities: ModelStringInput
+  devIncentive: ModelStringInput
+  images: ModelStringInput
+  videos: ModelStringInput
+  floorPlan: ModelStringInput
+  marketingCollateral: ModelStringInput
+  offeringMemorandum: ModelStringInput
+  nickname: ModelStringInput
+  userAccess: ModelStringInput
+  createdDate: ModelStringInput
+  privacy: ModelStringInput
+  status: ModelStringInput
+  owner: ModelStringInput
+  rentalApproval: ModelBooleanInput
+  quantity: ModelIntInput
+  dealPrice: ModelFloatInput
+  number: ModelIntInput
+  quantityInDeal: ModelFloatInput
+  rentalAssumptions: ModelFloatInput
+  managementSF: ModelFloatInput
+  propertyTaxSF: ModelFloatInput
+  insuranceSF: ModelFloatInput
+  repairSF: ModelFloatInput
+  bedsCount: ModelStringInput
+  bathsCount: ModelStringInput
+  and: [ModelUnitConditionInput]
+  or: [ModelUnitConditionInput]
+  not: ModelUnitConditionInput
+}
+
+type ModelDealConnection {
+  items: [Deal]
+  nextToken: String
+}
+
+input ModelDealFilterInput {
+  id: ModelIDInput
+  active: ModelBooleanInput
+  title: ModelStringInput
+  buyerRebate: ModelFloatInput
+  devIncentive: ModelStringInput
+  dollarValues: ModelFloatInput
+  userAccess: ModelStringInput
+  createdDate: ModelStringInput
+  privacy: ModelStringInput
+  owner: ModelStringInput
+  rentalApproval: ModelBooleanInput
+  offeringMemorandum: ModelStringInput
+  otherDocs: ModelStringInput
+  publicDesc: ModelStringInput
+  privateDesc: ModelStringInput
+  rentalAssumptions: ModelFloatInput
+  discount: ModelFloatInput
+  featured: ModelBooleanInput
+  unitQuantity: ModelStringInput
+  occupancy: ModelIntInput
+  vacancy: ModelIntInput
+  images: ModelStringInput
+  videos: ModelStringInput
+  overridePrice: ModelBooleanInput
+  overrideDiscount: ModelBooleanInput
+  and: [ModelDealFilterInput]
+  or: [ModelDealFilterInput]
+  not: ModelDealFilterInput
+}
+
+input CreateDealInput {
+  id: ID
+  active: Boolean
+  title: String
+  buyerRebate: Float
+  devIncentive: String
+  dollarValues: Float
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  owner: String
+  rentalApproval: Boolean
+  offeringMemorandum: [String]
+  otherDocs: [String]
+  publicDesc: String
+  privateDesc: String
+  rentalAssumptions: Float
+  discount: Float
+  featured: Boolean
+  unitQuantity: [String]
+  occupancy: Int
+  vacancy: Int
+  images: [String]
+  videos: [String]
+  overridePrice: Boolean
+  overrideDiscount: Boolean
+  dealBuildingId: ID
+  dealDeveloperId: ID
+}
+
+input UpdateDealInput {
+  id: ID!
+  active: Boolean
+  title: String
+  buyerRebate: Float
+  devIncentive: String
+  dollarValues: Float
+  userAccess: [String]
+  createdDate: String
+  privacy: String
+  owner: String
+  rentalApproval: Boolean
+  offeringMemorandum: [String]
+  otherDocs: [String]
+  publicDesc: String
+  privateDesc: String
+  rentalAssumptions: Float
+  discount: Float
+  featured: Boolean
+  unitQuantity: [String]
+  occupancy: Int
+  vacancy: Int
+  images: [String]
+  videos: [String]
+  overridePrice: Boolean
+  overrideDiscount: Boolean
+  dealBuildingId: ID
+  dealDeveloperId: ID
+}
+
+input DeleteDealInput {
+  id: ID
+}
+
+input ModelDealConditionInput {
+  active: ModelBooleanInput
+  title: ModelStringInput
+  buyerRebate: ModelFloatInput
+  devIncentive: ModelStringInput
+  dollarValues: ModelFloatInput
+  userAccess: ModelStringInput
+  createdDate: ModelStringInput
+  privacy: ModelStringInput
+  owner: ModelStringInput
+  rentalApproval: ModelBooleanInput
+  offeringMemorandum: ModelStringInput
+  otherDocs: ModelStringInput
+  publicDesc: ModelStringInput
+  privateDesc: ModelStringInput
+  rentalAssumptions: ModelFloatInput
+  discount: ModelFloatInput
+  featured: ModelBooleanInput
+  unitQuantity: ModelStringInput
+  occupancy: ModelIntInput
+  vacancy: ModelIntInput
+  images: ModelStringInput
+  videos: ModelStringInput
+  overridePrice: ModelBooleanInput
+  overrideDiscount: ModelBooleanInput
+  and: [ModelDealConditionInput]
+  or: [ModelDealConditionInput]
+  not: ModelDealConditionInput
+}
+
+type ModelAccessRequestConnection {
+  items: [AccessRequest]
+  nextToken: String
+}
+
+input ModelAccessRequestFilterInput {
+  id: ModelIDInput
+  user: ModelIDInput
+  user_name: ModelStringInput
+  and: [ModelAccessRequestFilterInput]
+  or: [ModelAccessRequestFilterInput]
+  not: ModelAccessRequestFilterInput
+}
+
+input CreateAccessRequestInput {
+  id: ID
+  user: ID
+  user_name: String
+  accessRequestBuildingId: ID
+  accessRequestUnitId: ID
+  accessRequestDealId: ID
+}
+
+input UpdateAccessRequestInput {
+  id: ID!
+  user: ID
+  user_name: String
+  accessRequestBuildingId: ID
+  accessRequestUnitId: ID
+  accessRequestDealId: ID
+}
+
+input DeleteAccessRequestInput {
+  id: ID
+}
+
+input ModelAccessRequestConditionInput {
+  user: ModelIDInput
+  user_name: ModelStringInput
+  and: [ModelAccessRequestConditionInput]
+  or: [ModelAccessRequestConditionInput]
+  not: ModelAccessRequestConditionInput
+}
+
+type ModelLeadConnection {
+  items: [Lead]
+  nextToken: String
+}
+
+input ModelLeadFilterInput {
+  id: ModelIDInput
+  downPayment: ModelFloatInput
+  purchasePrice: ModelFloatInput
+  bidAmount: ModelFloatInput
+  holdPeriod: ModelIntInput
+  investmentType: ModelIntInput
+  propertyTax: ModelFloatInput
+  management: ModelFloatInput
+  repairs: ModelFloatInput
+  insurance: ModelFloatInput
+  vacancy: ModelFloatInput
+  customRent: ModelStringInput
+  manualBid: ModelBooleanInput
+  offerAmount: ModelFloatInput
+  userId: ModelStringInput
+  dealId: ModelStringInput
+  investmentTarget: ModelStringInput
+  appreciation: ModelFloatInput
+  and: [ModelLeadFilterInput]
+  or: [ModelLeadFilterInput]
+  not: ModelLeadFilterInput
+}
+
+input CreateLeadInput {
+  id: ID
+  downPayment: Float
+  purchasePrice: Float
+  bidAmount: Float
+  holdPeriod: Int
+  investmentType: Int
+  propertyTax: Float
+  management: Float
+  repairs: Float
+  insurance: Float
+  vacancy: Float
+  customRent: String
+  manualBid: Boolean
+  offerAmount: Float
+  userId: String
+  dealId: String
+  investmentTarget: String
+  appreciation: Float
+  leadDealId: ID!
+  leadUserId: ID!
+}
+
+input UpdateLeadInput {
+  id: ID!
+  downPayment: Float
+  purchasePrice: Float
+  bidAmount: Float
+  holdPeriod: Int
+  investmentType: Int
+  propertyTax: Float
+  management: Float
+  repairs: Float
+  insurance: Float
+  vacancy: Float
+  customRent: String
+  manualBid: Boolean
+  offerAmount: Float
+  userId: String
+  dealId: String
+  investmentTarget: String
+  appreciation: Float
+  leadDealId: ID
+  leadUserId: ID
+}
+
+input DeleteLeadInput {
+  id: ID
+}
+
+input ModelLeadConditionInput {
+  downPayment: ModelFloatInput
+  purchasePrice: ModelFloatInput
+  bidAmount: ModelFloatInput
+  holdPeriod: ModelIntInput
+  investmentType: ModelIntInput
+  propertyTax: ModelFloatInput
+  management: ModelFloatInput
+  repairs: ModelFloatInput
+  insurance: ModelFloatInput
+  vacancy: ModelFloatInput
+  customRent: ModelStringInput
+  manualBid: ModelBooleanInput
+  offerAmount: ModelFloatInput
+  userId: ModelStringInput
+  dealId: ModelStringInput
+  investmentTarget: ModelStringInput
+  appreciation: ModelFloatInput
+  and: [ModelLeadConditionInput]
+  or: [ModelLeadConditionInput]
+  not: ModelLeadConditionInput
+}
+
+type ModelUnitDealQuantityConnection {
+  items: [UnitDealQuantity]
+  nextToken: String
+}
+
+input ModelUnitDealQuantityFilterInput {
+  id: ModelIDInput
+  quantity: ModelIntInput
+  index: ModelIntInput
+  and: [ModelUnitDealQuantityFilterInput]
+  or: [ModelUnitDealQuantityFilterInput]
+  not: ModelUnitDealQuantityFilterInput
+}
+
+input CreateUnitDealQuantityInput {
+  id: ID
+  quantity: Int
+  index: Int
+  unitDealQuantityUnitId: ID
+  unitDealQuantityDealId: ID
+}
+
+input UpdateUnitDealQuantityInput {
+  id: ID!
+  quantity: Int
+  index: Int
+  unitDealQuantityUnitId: ID
+  unitDealQuantityDealId: ID
+}
+
+input DeleteUnitDealQuantityInput {
+  id: ID
+}
+
+input ModelUnitDealQuantityConditionInput {
+  quantity: ModelIntInput
+  index: ModelIntInput
+  and: [ModelUnitDealQuantityConditionInput]
+  or: [ModelUnitDealQuantityConditionInput]
+  not: ModelUnitDealQuantityConditionInput
+}
+
+type ModelDealOfferConnection {
+  items: [DealOffer]
+  nextToken: String
+}
+
+input ModelDealOfferFilterInput {
+  id: ModelIDInput
+  dealId: ModelStringInput
+  userFirstName: ModelStringInput
+  userLastName: ModelStringInput
+  userPhone: ModelStringInput
+  userEmail: ModelStringInput
+  username: ModelStringInput
+  offerAmount: ModelStringInput
+  downPayment: ModelStringInput
+  and: [ModelDealOfferFilterInput]
+  or: [ModelDealOfferFilterInput]
+  not: ModelDealOfferFilterInput
+}
+
+input CreateDealOfferInput {
+  id: ID
+  dealId: String
+  userFirstName: String
+  userLastName: String
+  userPhone: String
+  userEmail: String
+  username: String
+  offerAmount: String
+  downPayment: String
+}
+
+input UpdateDealOfferInput {
+  id: ID!
+  dealId: String
+  userFirstName: String
+  userLastName: String
+  userPhone: String
+  userEmail: String
+  username: String
+  offerAmount: String
+  downPayment: String
+}
+
+input DeleteDealOfferInput {
+  id: ID
+}
+
+input ModelDealOfferConditionInput {
+  dealId: ModelStringInput
+  userFirstName: ModelStringInput
+  userLastName: ModelStringInput
+  userPhone: ModelStringInput
+  userEmail: ModelStringInput
+  username: ModelStringInput
+  offerAmount: ModelStringInput
+  downPayment: ModelStringInput
+  and: [ModelDealOfferConditionInput]
+  or: [ModelDealOfferConditionInput]
+  not: ModelDealOfferConditionInput
+}

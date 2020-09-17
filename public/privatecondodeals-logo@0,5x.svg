@@ -1,0 +1,33 @@
+<svg id="privatecondodeals-logo" xmlns="http://www.w3.org/2000/svg" width="289" height="58" viewBox="0 0 578 116">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 28px;
+        opacity: 0.56;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #555;
+        text-anchor: middle;
+        font-family: "Khmer MN";
+      }
+
+      .cls-2 {
+        font-size: 60px;
+      }
+
+      .cls-3 {
+        font-size: 25px;
+        text-transform: uppercase;
+      }
+
+      .cls-4 {
+        fill: #01b143;
+      }
+    </style>
+  </defs>
+  <text id="PRIVATE" class="cls-1" transform="translate(77.689 25.898) scale(1.546)">PRIVATE</text>
+  <text id="CondoDeals" class="cls-2" transform="translate(221.515 97.036) scale(1.546)">CondoDeals</text>
+  <text id="COM_copy_2" data-name="COM copy 2" class="cls-3" transform="translate(536.99 89.305) scale(1.546)">COM</text>
+  <circle id="Ellipse_3_copy_4" data-name="Ellipse 3 copy 4" class="cls-4" cx="471" cy="86.44" r="8.5"/>
+</svg>

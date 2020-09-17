@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-privatecondodeals-dev-123155-authRole",
+            "UnauthRoleArn": "arn:aws:iam::972347561772:role/amplify-privatecondodeals-dev-123155-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::972347561772:role/amplify-privatecondodeals-dev-123155-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-privatecondodeals-dev-123155-deployment",
+            "UnauthRoleName": "amplify-privatecondodeals-dev-123155-unauthRole",
+            "StackName": "amplify-privatecondodeals-dev-123155",
+            "StackId": "arn:aws:cloudformation:us-east-1:972347561772:stack/amplify-privatecondodeals-dev-123155/fd59fc90-e77e-11ea-93a0-125caf34a739",
+            "AmplifyAppId": "d14ra1lv83c0my"
+        },
+        "categories": {
+            "auth": {
+                "privatecondodeals892d6319": {}
+            }
+        }
+    }
+}
